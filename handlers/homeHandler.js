@@ -1,5 +1,5 @@
-let Tag = require('./../models/TagSchema')
-let Image = require('./../models/ImageSchema')
+// let Tag = require('./../models/TagSchema')
+// let Image = require('./../models/ImageSchema')
 const fs = require('fs')
 
 module.exports = (req, res) => {
@@ -14,17 +14,18 @@ module.exports = (req, res) => {
       });
       let dispalyTags = '';
 
-      Tag.find({}).then(tags => {
-        for (let tag of tags) {
-          dispalyTags += `<div class='tag' id="${tag._id}">${tag.tagName}</div>`;
-        }
+      // Tag.find({}).then(tags => {
+      //   for (let tag of tags) {
+      //     dispalyTags += `<div class='tag' id="${tag._id}">${tag.tagName}</div>`;
+      //   }
 
-        data = data
-          .toString()
-          .replace(`<div class='replaceMe'></div>`, dispalyTags);
+      //   data = data
+      //     .toString()
+      //     .replace(`<div class='replaceMe'></div>`, dispalyTags);
         
-        res.end(data)
-      })
+      //   res.end(data)
+      // })
+      res.end();
     })
   } else {
     return true
